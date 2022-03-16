@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="container">
+
+        </div>
+    </div>
+
+    <script>
+        let container = document.getElementById('container')
+
+        let words ='dsdfdfdf  fd g df gf g d df g fdg  fdg fd g  fdg'
+        let count =0
+        let spans =[]
+
+        function newfun(){
+       for(let i=0;i<words.length;i++){
+        let letters = words[i]
+           let span = document.createElement('span')
+           span.innerText=letters
+           container.appendChild(span)
+           spans.push(span)
+       }
+
+        }
+        newfun()
+        document.addEventListener('keydown',(event)=>{
+        
+            let typedwords = event.key
+
+            if(typedwords==words[count]){
+                spans[count].style.backgroundColor ='green'
+            }
+            else{
+                spans[count].style.backgroundColor ='red'
+
+            }
+            count++
+
+        })
+        
+    </script>
+</body>
+</html>
